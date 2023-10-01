@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Online Tutorial Slots</title>
+</head>
+
+<body>
+    <h1 style="text-align: center;">Available Tutor Slots</h1>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+        <div style="border: 1px solid #ccc; padding: 10px; margin: 10px; width: 300px; text-align: center;">
+            <h2>Tutor 1</h2>
+            <p>Date: Monday, October 10th</p>
+            <p>Time: 10:00 AM - 11:30 AM</p>
+            <button onclick="bookSlot('Tutor 1')" style="background-color: #007BFF; color: #fff; padding: 5px 10px; border: none; cursor: pointer;">Book Slot</button>
+        </div>
+        <div style="border: 1px solid #ccc; padding: 10px; margin: 10px; width: 300px; text-align: center;">
+            <h2>Tutor 2</h2>
+            <p>Date: Wednesday, October 12th</p>
+            <p>Time: 2:00 PM - 3:30 PM</p>
+            <button onclick="bookSlot('Tutor 2')" style="background-color: #007BFF; color: #fff; padding: 5px 10px; border: none; cursor: pointer;">Book Slot</button>
+        </div>
+
+
+        <div style="border: 1px solid #ccc; padding: 10px; margin: 10px; width: 300px; text-align: center;">
+            <h2>Tutor 3</h2>
+            <p>Date: Friday, October 14th</p>
+            <p>Time: 4:00 PM - 5:30 PM</p>
+            <button onclick="bookSlot('Tutor 3')" style="background-color: #007BFF; color: #fff; padding: 5px 10px; border: none; cursor: pointer;">Book Slot</button>
+        </div>
+
+        <div style="border: 1px solid #ccc; padding: 10px; margin: 10px; width: 300px; text-align: center;">
+            <h2>Tutor 4</h2>
+            <p>Date: Saturday, October 15th</p>
+            <p>Time: 9:00 AM - 10:30 AM</p>
+            <button onclick="bookSlot('Tutor 4')" style="background-color: #007BFF; color: #fff; padding: 5px 10px; border: none; cursor: pointer;">Book Slot</button>
+        </div>
+
+        <div style="border: 1px solid #ccc; padding: 10px; margin: 10px; width: 300px; text-align: center;">
+            <h2>Tutor 5</h2>
+            <p>Date: Sunday, October 16th</p>
+            <p>Time: 3:00 PM - 4:30 PM</p>
+            <button onclick="bookSlot('Tutor 5')" style="background-color: #007BFF; color: #fff; padding: 5px 10px; border: none; cursor: pointer;">Book Slot</button>
+        </div>
+
+
+    </div>
+
+    <script>
+        function bookSlot(tutorName) {
+       
+            alert("Slot for " + tutorName + " successfully booked!");
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Online Tutorial Attendance</title>
+    <style>
+        /* CSS styles for the page */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        #attendance-status {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Online Tutorial Attendance</h1>
+    </header>
+    <div class="container">
+        <h2>Student Attendance</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Student Name</th>
+                    <th>Attendance</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Karthik</td>
+                    <td><input type="checkbox" id="student1"></td>
+                </tr>
+                <tr>
+                    <td>Gokula Kannan</td>
+                    <td><input type="checkbox" id="student2"></td>
+                </tr>
+                <tr>
+                    <td>Vikram</td>
+                    <td><input type="checkbox" id="student3"></td>
+                </tr>
+                <!-- Add more students as needed -->
+            </tbody>
+        </table>
+        <div class="button-container">
+            <button onclick="checkAttendance()">Check Attendance</button>
+        </div>
+        <div id="attendance-status"></div>
+    </div>
+
+    <script>
+        function checkAttendance() {
+            // Initialize an empty array to store attendance status
+            var attendanceStatus = [];
+
+            // Get the attendance status of each student
+            var student1 = document.getElementById("student1").checked;
+            var student2 = document.getElementById("student2").checked;
+            var student3 = document.getElementById("student3").checked;
+
+            // Push the attendance status into the array
+            attendanceStatus.push(student1, student2, student3);
+
+            // Calculate total attendance
+            var totalAttendance = attendanceStatus.filter(Boolean).length;
+
+            // Display the attendance status
+            var statusMessage = "Total Attendance: " + totalAttendance + " out of " + attendanceStatus.length;
+            document.getElementById("attendance-status").textContent = statusMessage;
+        }
+    </script>
+</body>
+
+</html>
