@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tutor Page</title>
+    <style>
+        /* Add CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tutor Page</h1>
+    </header>
+    <div class="container">
+        <h2>Post Marks</h2>
+        <form id="marksForm">
+            <label for="RegisterNumber">RegisterNumber</label>
+            <input type="text" id="RegisterNumber">
+            <label for="studentName">Student Name:</label>
+            <input type="text" id="studentName" required>
+            <label for="marks">Marks:</label>
+            <input type="text" id="marks" required>
+            
+            <button type="button" onclick="postMarks()">Post Marks</button>
+        </form>
+    </div>
+
+    <script>
+        function postMarks() {
+            const RegisterNumber=document.getElementById("RegisterNumber").value;
+            const studentName = document.getElementById("studentName").value;
+            const marks = document.getElementById("marks").value;
+         
+            localStorage.setItem(`marks_${studentName}_${RegisterNumber}`, marks);
+            
+            alert(`Marks posted for ${studentName} (${RegisterNumber}): ${marks}`);
+            
+            document.getElementById("RegisterNumber").value="";
+            document.getElementById("studentName").value = "";
+            document.getElementById("marks").value = "";
+        }
+    </script>
+</body>
+</html>

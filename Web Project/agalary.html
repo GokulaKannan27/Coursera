@@ -1,0 +1,261 @@
+<!--<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Array Example</title>
+</head>
+<body style="padding: 70px; background-color: brown;">
+    <div>
+        <a href="sgalary.html"><input type="button" value="HOME" style="top:0px;  left: 100px; background-color: green; color: red; "></a>
+    </div>
+    <center>
+    <table border="2px" style="margin: 10px;" align="center">
+        <tr style="padding-bottom: 20px;">
+            <td>
+                <h1 align="center">Student list</h1>
+                <ul id="students-list"></ul>
+                <button onclick="addStudent()">Add Student</button>
+                <button onclick="removeLastStudent()">Remove Student</button>
+                <button onclick="displayStudents()">Display Students</button>
+            </td>
+        </tr>
+        <tr style="padding-bottom: 20px;">
+            <td>
+                <h1 align="center">Course List</h1>
+                <ul id="courses-list"></ul>
+                <button onclick="addCourse()">Add Course</button>
+                <button onclick="removeLastCourse()">Remove Course</button>
+                <button onclick="displayCourses()">Display Courses</button>
+            </td>
+        </tr>
+        <tr style="padding-bottom: 20px;">
+            <td>
+                <h1 align="center">Tutors List</h1>
+                <ul id="tutors-list"></ul>
+                <button onclick="addTutor()">Add Tutor</button>
+                <button onclick="removeLastTutor()">Remove Tutor</button>
+                <button onclick="displayTutors()">Display Tutors</button>
+            </td>
+        </tr>
+    </table>
+    </center>
+
+    <script>
+        let students = ["Vikram", "Karthik", "Gokula Kannan"];
+        let courses = ["Programming languages", "HTML", "Python"];
+        let tutors = ["Nikitha", "Dhamo", "Bharath"];
+
+        const studentsList = document.getElementById("students-list");
+        const coursesList = document.getElementById("courses-list");
+        const tutorsList = document.getElementById("tutors-list");
+
+        function addStudent() {
+            const newStudent = prompt("Enter a new student:");
+            if (newStudent) {
+                students.push(newStudent);
+            }
+        }
+
+        function removeLastStudent() {
+            if (students.length > 0) {
+                students.pop();
+            }
+        }
+
+        function displayStudents() {
+            studentsList.innerHTML = ""; // Clear the list
+            students.forEach(function (student) {
+                const listItem = document.createElement("li");
+                listItem.textContent = student;
+                studentsList.appendChild(listItem);
+            });
+        }
+
+        function addCourse() {
+            const newCourse = prompt("Enter a new course:");
+            if (newCourse) {
+                courses.push(newCourse);
+            }
+        }
+
+        function removeLastCourse() {
+            if (courses.length > 0) {
+                courses.pop();
+            }
+        }
+
+        function displayCourses() {
+            coursesList.innerHTML = ""; // Clear the list
+            courses.forEach(function (course) {
+                const listItem = document.createElement("li");
+                listItem.textContent = course;
+                coursesList.appendChild(listItem);
+            });
+        }
+
+        function addTutor() {
+            const newTutor = prompt("Enter a new tutor:");
+            if (newTutor) {
+                tutors.push(newTutor);
+            }
+        }
+
+        function removeLastTutor() {
+            if (tutors.length > 0) {
+                tutors.pop();
+            }
+        }
+
+        function displayTutors() {
+            tutorsList.innerHTML = ""; // Clear the list
+            tutors.forEach(function (tutor) {
+                const listItem = document.createElement("li");
+                listItem.textContent = tutor;
+                tutorsList.appendChild(listItem);
+            });
+        }
+    </script>
+</body>
+</html>-->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style type="text/css">
+    /* CSS styles for the second section */
+    body {
+      padding: 70px;
+      background-color: brown;
+    }
+
+    /* ... (your existing CSS styles for the second section) */
+  </style>
+</head>
+
+<body>
+  <script src="price cal.js"></script>
+  <center>
+    <table border="2px" style="margin: 10px;" align="center">
+      <tr style="padding-bottom: 20px;">
+        <td>
+          <h1 align="center">Student list</h1>
+          <ul id="students-list"></ul>
+          <button onclick="addStudent()">Add Student</button>
+          <button onclick="removeLastStudent()">Remove Student</button>
+          <button onclick="displayStudents()">Display Students</button>
+        </td>
+      </tr>
+      <tr style="padding-bottom: 20px;">
+        <td>
+          <h1 align="center">Course List</h1>
+          <ul id="courses-list"></ul>
+          <button onclick="addCourse()">Add Course</button>
+          <button onclick="removeLastCourse()">Remove Course</button>
+          <button onclick="displayCourses()">Display Courses</button>
+        </td>
+      </tr>
+      <tr style="padding-bottom: 20px;">
+        <td>
+          <h1 align="center">Tutors List</h1>
+          <ul id="tutors-list"></ul>
+          <button onclick="addTutor()">Add Tutor</button>
+          <button onclick="removeLastTutor()">Remove Tutor</button>
+          <button onclick="displayTutors()">Display Tutors</button>
+        </td>
+      </tr>
+    </table>
+  </center>
+
+  <script>
+    // JavaScript code for the second section
+    let students = JSON.parse(localStorage.getItem("students")) || ["Vikram", "Karthik", "Gokula Kannan"];
+    let courses = JSON.parse(localStorage.getItem("courses")) || ["Programming languages", "HTML", "Python"];
+    let tutors = JSON.parse(localStorage.getItem("tutors")) || ["Nikitha", "Dhamo", "Bharath"];
+
+    const studentsList = document.getElementById("students-list");
+    const coursesList = document.getElementById("courses-list");
+    const tutorsList = document.getElementById("tutors-list");
+
+    function updateLocalStorage() {
+      localStorage.setItem("students", JSON.stringify(students));
+      localStorage.setItem("courses", JSON.stringify(courses));
+      localStorage.setItem("tutors", JSON.stringify(tutors));
+    }
+
+    function addStudent() {
+      const newStudent = prompt("Enter a new student:");
+      if (newStudent) {
+        students.push(newStudent);
+        updateLocalStorage();
+      }
+    }
+
+    function removeLastStudent() {
+      if (students.length > 0) {
+        students.pop();
+        updateLocalStorage();
+      }
+    }
+
+    function displayStudents() {
+      studentsList.innerHTML = ""; // Clear the list
+      students.forEach(function (student) {
+        const listItem = document.createElement("li");
+        listItem.textContent = student;
+        studentsList.appendChild(listItem);
+      });
+    }
+
+    function addCourse() {
+      const newCourse = prompt("Enter a new course:");
+      if (newCourse) {
+        courses.push(newCourse);
+        updateLocalStorage();
+      }
+    }
+
+    function removeLastCourse() {
+      if (courses.length > 0) {
+        courses.pop();
+        updateLocalStorage();
+      }
+    }
+
+    function displayCourses() {
+      coursesList.innerHTML = ""; // Clear the list
+      courses.forEach(function (course) {
+        const listItem = document.createElement("li");
+        listItem.textContent = course;
+        coursesList.appendChild(listItem);
+      });
+    }
+
+    function addTutor() {
+      const newTutor = prompt("Enter a new tutor:");
+      if (newTutor) {
+        tutors.push(newTutor);
+        updateLocalStorage();
+      }
+    }
+
+    function removeLastTutor() {
+      if (tutors.length > 0) {
+        tutors.pop();
+        updateLocalStorage();
+      }
+    }
+
+    function displayTutors() {
+      tutorsList.innerHTML = ""; // Clear the list
+      tutors.forEach(function (tutor) {
+        const listItem = document.createElement("li");
+        listItem.textContent = tutor;
+        tutorsList.appendChild(listItem);
+      });
+    }
+    displayStudents();
+    displayCourses();
+    displayTutors();
+  </script>
+</body>
+
+</html>

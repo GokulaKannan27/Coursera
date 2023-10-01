@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Student Attendance</title>
+    <style>
+        /* CSS styles for the page */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        #attendance-status {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Student Attendance</h1>
+    </header>
+    <div class="container">
+        <h2>Class Attendance</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Subject</th>
+                    <th>Total Classes</th>
+                    <th>Classes Attended</th>
+                    <th>Classes Absent</th>
+                    <th>Attendance Percentage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Python</td>
+                    <td>23</td>
+                    <td><input type="number" id="python-attended" min="0"></td>
+                    <td><span id="python-absent">0</span></td>
+                    <td><span id="python-percentage">0%</span></td>
+                </tr>
+                <tr>
+                    <td>Java</td>
+                    <td>23</td>
+                    <td><input type="number" id="java-attended" min="0"></td>
+                    <td><span id="java-absent">0</span></td>
+                    <td><span id="java-percentage">0%</span></td>
+                </tr>
+                <tr>
+                    <td>OOPS</td>
+                    <td>23</td>
+                    <td><input type="number" id="oops-attended" min="0"></td>
+                    <td><span id="oops-absent">0</span></td>
+                    <td><span id="oops-percentage">0%</span></td>
+                </tr>
+                <tr>
+                    <td>Web</td>
+                    <td>23</td>
+                    <td><input type="number" id="web-attended" min="0"></td>
+                    <td><span id="web-absent">0</span></td>
+                    <td><span id="web-percentage">0%</span></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="button-container">
+            <button onclick="calculateAttendance()">Calculate Attendance</button>
+        </div>
+        <div id="attendance-status"></div>
+    </div>
+
+    <script>
+        function calculateAttendance() {
+         
+            var pythonTotal = 23;
+            var javaTotal = 23;
+            var oopsTotal = 23;
+            var webTotal = 23;
+
+            var pythonAttended = parseInt(document.getElementById("python-attended").value);
+            var javaAttended = parseInt(document.getElementById("java-attended").value);
+            var oopsAttended = parseInt(document.getElementById("oops-attended").value);
+            var webAttended = parseInt(document.getElementById("web-attended").value);
+
+            var pythonAbsent = pythonTotal - pythonAttended;
+            var javaAbsent = javaTotal - javaAttended;
+            var oopsAbsent = oopsTotal - oopsAttended;
+            var webAbsent = webTotal - webAttended;
+
+ 
+            var pythonPercentage = (pythonAttended / pythonTotal * 100).toFixed(2) + "%";
+            var javaPercentage = (javaAttended / javaTotal * 100).toFixed(2) + "%";
+            var oopsPercentage = (oopsAttended / oopsTotal * 100).toFixed(2) + "%";
+            var webPercentage = (webAttended / webTotal * 100).toFixed(2) + "%";
+
+
+            document.getElementById("python-absent").textContent = pythonAbsent;
+            document.getElementById("java-absent").textContent = javaAbsent;
+            document.getElementById("oops-absent").textContent = oopsAbsent;
+            document.getElementById("web-absent").textContent = webAbsent;
+
+            document.getElementById("python-percentage").textContent = pythonPercentage;
+            document.getElementById("java")}

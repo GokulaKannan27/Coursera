@@ -1,0 +1,174 @@
+
+<html>
+<head>
+<link rel="stylesheet" href="nav css.css">
+<style>
+
+
+* {box-sizing: border-box;}
+body {font-family: Verdana, sans-serif;}
+.mySlides {display: none;}
+
+img {vertical-align: middle;
+width:600px;
+height:450px;}
+
+
+
+.text {
+  color: white;
+  font-family:arial;
+  font-weight:bold;
+  font-size: 20px;
+  top:20px;
+  padding: 12px 12px;
+  position: relative;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+  background-color:green;
+  border-radius:40px;
+  
+}
+
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+  position:relative;
+  top:100px;
+}
+
+.active {
+  background-color: #717171;
+}
+
+a{
+text-decoration:none;
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+.l{
+
+    width: 900px;
+    height: auto;
+}
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+
+.titletext{
+background:yellow;
+color:black;
+width:300px;
+padding:5px 12px;
+position:relative;
+left:50px;
+font-size:22px;
+text-align:center;
+}
+
+fieldset{
+position:relative;
+left:100px;
+right:100px;
+height:690px;
+width:1300px;
+border-radius:20px;
+background:#eeeeee;
+}
+
+
+#imagee{
+position:relative;
+height:250px;
+width:310px;
+background-repeat:no-repeat;
+background-size:cover;
+top:50px;
+left:50px;
+}
+
+
+td{
+position:relative;
+height:280px;
+width:420px;
+}
+</style>
+</head>
+<body align="center" style="background-color:black;">
+
+<header>
+
+    <div class="header-1">
+
+        <a href="#" class="logo">&nbsp; &nbsp; &nbsp; ONLINE TUTORIALS &nbsp; &nbsp; &nbsp;</a>
+
+    </div>
+</header>
+<br><br><br><br>
+<br>
+<div class="titletext">OBJECTIVES</div>
+<a class="l" href="https://www.youtube.com/@tutorjoes"><img src="h2.png" width="900px" style="border: 3px solid white; width: 800px; height: 200px;"></a>
+<br><br><br>
+<fieldset style="background-color: white; height: auto;">
+<table>
+<tr>
+     <td><a href="https://youtu.be/yC9ZwDfT3b0" style="margin-left: 20px;"><img src="h1.png" style="width: 300px; height: 200px;"></a></td>
+    <td><a href="https://www.youtube.com/watch?v=Oes56FoYABc" STYLE="margin-left: 20PX;"><img src="h4.png" style="width: 300px; height: 200px;"></a></td>
+    <td><a href="https://www.youtube.com/watch?v=Yp_tqu22zIU" STYLE="margin-left:20PX ;"><img src="h3.png" style="width: 300px; height: 200px;" ></a></td>
+</tr>
+<tr>
+    <td><a href="https://www.youtube.com/watch?v=dBUBYz75gdk" style="margin-left: 20px;"><img src="h5.png" style="width: 300px; height: 200px;"></a></td>
+   <td><a href="https://www.youtube.com/watch?v=8xpEuu0s1A4" STYLE="margin-left: 20PX;"><img src="h6.png" style="width: 300px; height: 200px;"></a></td>
+   <td><a href="https://www.youtube.com/watch?v=qH7m9ik3ILs"  STYLE="margin-left: 20PX;"><img src="h7.png" style="width: 300px; height: 200px;"></a></td>
+</tr>
+
+</table>
+</fieldset>
+<hr>
+<br>
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 3000); // Change image every 2 seconds
+}
+</script>
+
+</body>
+</html> 
