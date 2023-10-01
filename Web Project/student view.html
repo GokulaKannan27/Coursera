@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Page</title>
+    <style>
+     
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Student Page</h1>
+    </header>
+    <div class="container">
+        <h2>Your Marks</h2>
+        <table>
+            <tr>
+                <th>Register Number</th>
+                <th>Student Name</th>
+                <th>Marks</th>
+            </tr>
+
+        </table>
+    </div>
+
+    <script>
+
+        const table = document.querySelector("table");
+
+
+        for (let i = 0; i < localStorage.length; i++) {
+            const key = localStorage.key(i);
+            const marks = localStorage.getItem(key);
+
+    
+            if (key.startsWith("marks_")) {
+                const [studentName, RegisterNumber] = key.split("_").slice(1);
+                const row = table.insertRow(-1);
+                const cell1 = row.insertCell(0);
+                const cell2 = row.insertCell(1);
+                const cell3 = row.insertCell(2);
+                cell1.innerHTML = RegisterNumber;
+                cell2.innerHTML = studentName;
+                cell3.innerHTML = marks;
+            }
+        }
+    </script>
+</body>
+</html>

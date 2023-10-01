@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavaScript Array Example</title>
+</head>
+
+<body style="background-color:grey">
+    <div>
+        <a href="sgalary.html" class="top" style=" position: absolute;
+        top: 20px;
+        right: 20px;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;"><input type="button" value="HOME"></a>
+    </div>
+    <center>
+        <table style=" border: 2px solid black; padding: 50px; margin: 25px;">
+            <tr style="padding:90px">
+                <td>
+                    <h1>Subjects List</h1>
+                    <ul id="fruits-list"></ul>
+
+                    <button onclick="displayFruits()">Display Subjects</button>
+
+                    <script>
+                        let fruits = ["OOPs", "Python", "Java", "C"];
+                        const fruitsList = document.getElementById("fruits-list"); // Define fruitsList
+
+                        function displayFruits() {
+                            fruitsList.innerHTML = ""; // Clear the list
+                            fruits.forEach(function (fruit) {
+                                const listItem = document.createElement("li");
+                                listItem.textContent = fruit;
+                                fruitsList.appendChild(listItem);
+                            });
+                        }
+                    </script>
+                </td>
+            </tr>
+        </table>
+        <br><br>
+        <table style=" border: 2px solid black; padding: 90px;">
+            <tr>
+                <td>OOPs</td>
+                <td><input type="file" multiple></td>
+
+
+
+            </tr>
+            <tr>
+                <td>Java</td>
+                <td><input type="file" multiple></td>
+            </tr>
+            <tr>
+                <td>Python</td>
+                <td><input type="file" multiple></td>
+            </tr>
+            <tr>
+                <td>C</td>
+                <td><input type="file" multiple></td>
+            </tr>
+        </table>
+        <br>
+        <br>
+        <a href="Tutorsmarks.html" class="l"> <input type="button" value="MarksPost"></a>&nbsp;&nbsp;&nbsp;<a
+            href="Attendance view.html" class="l"> <input type="button" value="Attendance/post">
+    </center>
+</body>
+
+</html>
+<style>
+    .l {
+        bottom: 10px;
+        left: 10px;
+        color: yellowgreen;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+</style>
